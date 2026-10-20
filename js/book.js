@@ -5,8 +5,11 @@ let data=window.SELECTIONS;try{const r=await fetch("data/selections.json");if(r.
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const credits=$("credits").innerHTML,J=C.JACOB_SITE||"https://jacobmorleyrealestate.com";
 const textIn=`<p class="textin">Or text <b>${esc(C.TEXT_KEYWORD||"PARADE")}</b> to <b>${esc(C.TEXT_NUMBER)}</b> <span class="tag">placeholder number</span></p>`;
+const PH=`<span class="ph-empty"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.2" d="M3.5 6.5h17v12h-17zM3.5 15.5l5-5 4 4 2.5-2.5 5.5 5.5"/><circle cx="15.5" cy="9.5" r="1.4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg><em>Sample photo<br>coming soon</em></span>`;
+const hd=u=>/assets\/ext-[a-z]+\.jpg$/.test(u)?u.replace(/\.jpg$/,"-hd.webp"):u;
+window.phFail=img=>{const b=img.closest(".ph,.room-photo");if(b)b.classList.add("slot");if(img.srcset&&!img._f){img._f=1;img.removeAttribute("srcset");return}img.remove()};
 const pages=[];
-pages.push({id:"cover",label:"Cover",html:`<div class="pg cover"><div class="cover-img"></div><div class="cover-txt">
+pages.push({id:"cover",label:"Cover",html:`<div class="pg cover"><div class="cover-img"><picture><source type="image/webp" srcset="assets/lot52-rendering-768.webp 768w, assets/lot52-rendering-1536.webp 1536w" sizes="(min-width:900px) 62vw, 100vw"><img src="assets/lot52-rendering-1536.jpg" srcset="assets/lot52-rendering-768.jpg 768w, assets/lot52-rendering-1536.jpg 1536w" sizes="(min-width:900px) 62vw, 100vw" alt="Lot 52 Parade 2027 exterior rendering" decoding="async" onerror="this.closest('.cover-img').classList.add('noimg')"></picture></div><div class="cover-txt">
  <p class="eyebrow">Parade Home · Peach Springs Estates</p><h1>Where Red Rock<br>Meets <em>Refinement</em></h1>
  <p class="addr">Lot 52 · Peach Springs Estates Phase 2 · Hurricane, Utah</p>
  <dl class="facts"><div><dt>3,621</dt><dd>Living sq ft</dd></div><div><dt>5</dt><dd>Bedrooms on plan</dd></div><div><dt>RV + 2</dt><dd>Car garage</dd></div></dl>
@@ -14,9 +17,9 @@ pages.push({id:"cover",label:"Cover",html:`<div class="pg cover"><div class="cov
 data.rooms.forEach((r,ri)=>pages.push({id:r.id,label:r.title,html:`<div class="pg room"><div class="scroll">
  <div class="room-head"><p class="eyebrow">${String(ri+1).padStart(2,"0")} · ${esc(r.eyebrow)}</p><h2>${esc(r.title)}</h2>
  ${r.sample?`<p class="sample-banner"><span class="tag solid">Sample</span> Placeholder selections. Final selections coming soon.</p>`:`<p class="real-banner">Selections as shown on the Lot 52 rendering (Option 2: Soft White &amp; Sand).</p>`}</div>
- ${r.id==="exterior"?`<div class="room-photo" style="background-image:url(assets/lot52-hero.jpg)"></div>`:""}
+ ${r.id==="exterior"?`<div class="room-photo"><picture><source type="image/webp" srcset="assets/lot52-rendering-768.webp 768w, assets/lot52-rendering-1536.webp 1536w" sizes="(min-width:1080px) 1040px, 92vw"><img src="assets/lot52-rendering-1536.jpg" srcset="assets/lot52-rendering-768.jpg 768w, assets/lot52-rendering-1536.jpg 1536w" sizes="(min-width:1080px) 1040px, 92vw" alt="Lot 52 exterior rendering, Option 2" loading="lazy" decoding="async" onerror="phFail(this)"></picture>${PH}</div>`:""}
  <ul class="grid">${r.spreads.map(s=>`<li class="item">
-   <div class="ph ${s.photo?"":"slot"}" ${s.photo?`style="background-image:url(${s.photo})"`:""}>${s.photo?"":"<span>Photo<br>coming soon</span>"}${s.sample?'<i class="tag solid">Sample</i>':""}</div>
+   <div class="ph${s.photo?"":" slot"}">${s.photo?`<img src="${esc(s.photo)}" srcset="${esc(hd(s.photo))} 2x" alt="${esc(s.name)}" loading="lazy" decoding="async" onerror="phFail(this)">`:""}${PH}${s.sample?'<i class="tag solid">Sample</i>':""}</div>
    <div class="meta"><p class="cat">${esc(s.category)}</p><h3>${esc(s.name)}</h3><p class="brand">${esc(s.brand)}</p></div></li>`).join("")}</ul>
  <div class="room-cta"><button class="btn solid" onclick="openLead('save')">Save my selections</button><button class="btn" onclick="openLead('text')">Text me this room</button></div>
  </div></div>`}));
@@ -40,7 +43,8 @@ const leaves=[...book.children];
 $("index").innerHTML=pages.map((p,i)=>`<button data-i="${i}">${esc(p.label)}</button>`).join("");
 $("dots").innerHTML=pages.map((p,i)=>`<button data-i="${i}" aria-label="${esc(p.label)}"></button>`).join("");
 let cur=0,turned=false;
-function set(n,anim=true){n=Math.max(0,Math.min(N-1,n));const fwd=n>cur;
+let ft;function set(n,anim=true){n=Math.max(0,Math.min(N-1,n));const fwd=n>cur;
+ if(anim){if(!book.classList.contains("flipping")){book.classList.add("flipping","notrans");void book.offsetWidth;book.classList.remove("notrans");void book.offsetWidth}clearTimeout(ft);ft=setTimeout(()=>book.classList.remove("flipping"),1050)}
  leaves.forEach((l,i)=>{const t=i<n;clearTimeout(l._g);
   if(!anim){l.classList.toggle("turned",t);l.classList.toggle("gone",t);l.style.zIndex=t?i+1:N-i;return}
   if(!t)l.classList.remove("gone");
