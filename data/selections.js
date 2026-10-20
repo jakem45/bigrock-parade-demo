@@ -1,0 +1,314 @@
+// AUTO-GENERATED from selections.json (lets the site work from file://). Edit the JSON, then: python3 tools/build_data.py --js-only
+window.SELECTIONS={
+ "meta": {
+  "property": "Lot 52, Peach Springs Estates Phase 2, Hurricane UT",
+  "job": "PS-52",
+  "propTag": "BR52P",
+  "livingSf": 3621,
+  "bedrooms": "5 bedrooms on the plan",
+  "garage": "RV garage plus 2-car garage",
+  "interiorStatus": "Interior selections are PLACEHOLDERS for demo only. Final selections coming soon."
+ },
+ "rooms": [
+  {
+   "id": "exterior",
+   "title": "Exterior",
+   "eyebrow": "Option 2 \u00b7 Soft White & Sand",
+   "sample": false,
+   "intro": "Exterior selections as shown on the Lot 52 rendering (Option 2 - Soft White & Sand).",
+   "spreads": [
+    {
+     "category": "Body Stucco",
+     "name": "Body stucco",
+     "brand": "Sherwin-Williams SW 7008 Alabaster",
+     "note": "Selection per rendering from Jacob, 2026-10-19",
+     "photo": "assets/ext-stucco.jpg",
+     "detail": "assets/lot52-hero.jpg",
+     "sample": false
+    },
+    {
+     "category": "Stone",
+     "name": "Cream Limestone (Ivory/Cream)",
+     "brand": "Ashlar / Tumbled",
+     "note": "Selection per rendering from Jacob, 2026-10-19",
+     "photo": "assets/ext-stone.jpg",
+     "detail": "assets/lot52-hero.jpg",
+     "sample": false
+    },
+    {
+     "category": "Roof Tile",
+     "name": "S-Tile (Concrete), Light Taupe Blend, Weathered",
+     "brand": "Boral / Eagle",
+     "note": "Selection per rendering from Jacob, 2026-10-19",
+     "photo": "assets/ext-roof.jpg",
+     "detail": "assets/lot52-hero.jpg",
+     "sample": false
+    },
+    {
+     "category": "Garage Doors",
+     "name": "Garage doors",
+     "brand": "Sherwin-Williams SW 7030 Anew Gray (custom match)",
+     "note": "Selection per rendering from Jacob, 2026-10-19",
+     "photo": "assets/ext-garage.jpg",
+     "detail": "assets/lot52-hero.jpg",
+     "sample": false
+    },
+    {
+     "category": "Windows / Fascia",
+     "name": "Windows & fascia",
+     "brand": "Black or Dark Bronze",
+     "note": "Selection per rendering from Jacob, 2026-10-19",
+     "photo": "assets/ext-windows.jpg",
+     "detail": "assets/lot52-hero.jpg",
+     "sample": false
+    },
+    {
+     "category": "Front Door",
+     "name": "Black Steel Look, Arched Glass Grid Door",
+     "brand": "Black steel look",
+     "note": "Selection per rendering from Jacob, 2026-10-19",
+     "photo": "assets/ext-door.jpg",
+     "detail": "assets/lot52-hero.jpg",
+     "sample": false
+    },
+    {
+     "category": "Lighting",
+     "name": "Mediterranean lanterns",
+     "brand": "Black / Aged Iron",
+     "note": "Selection per rendering from Jacob, 2026-10-19",
+     "photo": "assets/ext-lighting.jpg",
+     "detail": "assets/lot52-hero.jpg",
+     "sample": false
+    },
+    {
+     "category": "Accent Wood",
+     "name": "Pergola beams",
+     "brand": "Stained Wood (Dark Walnut)",
+     "note": "Selection per rendering from Jacob, 2026-10-19",
+     "photo": "assets/ext-wood.jpg",
+     "detail": "assets/lot52-hero.jpg",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "id": "kitchen",
+   "title": "Kitchen",
+   "eyebrow": "The Gathering Space",
+   "intro": "Placeholder selections showing how this room will be presented. Final selections coming soon.",
+   "sample": true,
+   "spreads": [
+    {
+     "category": "Cabinets",
+     "name": "Sample cabinet style",
+     "brand": "Brand TBD \u00b7 color TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Counters",
+     "name": "Sample countertop",
+     "brand": "Brand TBD \u00b7 color TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Flooring",
+     "name": "Sample flooring",
+     "brand": "Brand TBD \u00b7 color TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Fixtures",
+     "name": "Sample kitchen faucet & sink",
+     "brand": "Brand TBD \u00b7 finish TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Lighting",
+     "name": "Sample pendant lighting",
+     "brand": "Brand TBD \u00b7 finish TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Appliances",
+     "name": "Sample appliance package",
+     "brand": "Brand TBD \u00b7 finish TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Paint",
+     "name": "Sample wall paint",
+     "brand": "Brand TBD \u00b7 color TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Hardware",
+     "name": "Sample cabinet pulls",
+     "brand": "Brand TBD \u00b7 finish TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    }
+   ]
+  },
+  {
+   "id": "living-room",
+   "title": "Living Room",
+   "eyebrow": "Landscape & Light",
+   "intro": "Placeholder selections showing how this room will be presented. Final selections coming soon.",
+   "sample": true,
+   "spreads": [
+    {
+     "category": "Cabinets",
+     "name": "Sample built-ins",
+     "brand": "Brand TBD \u00b7 color TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Counters",
+     "name": "Sample fireplace surround / ledge",
+     "brand": "Brand TBD \u00b7 material TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Flooring",
+     "name": "Sample flooring",
+     "brand": "Brand TBD \u00b7 color TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Fixtures",
+     "name": "Sample fireplace",
+     "brand": "Brand TBD \u00b7 model TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Lighting",
+     "name": "Sample fixtures & recessed lighting",
+     "brand": "Brand TBD \u00b7 finish TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Appliances",
+     "name": "Sample media / smart-home items",
+     "brand": "Brand TBD \u00b7 TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Paint",
+     "name": "Sample wall paint",
+     "brand": "Brand TBD \u00b7 color TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Hardware",
+     "name": "Sample door hardware",
+     "brand": "Brand TBD \u00b7 finish TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    }
+   ]
+  },
+  {
+   "id": "primary-bath",
+   "title": "Primary Bath",
+   "eyebrow": "The Retreat",
+   "intro": "Placeholder selections showing how this room will be presented. Final selections coming soon.",
+   "sample": true,
+   "spreads": [
+    {
+     "category": "Cabinets",
+     "name": "Sample vanity",
+     "brand": "Brand TBD \u00b7 color TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Counters",
+     "name": "Sample vanity top",
+     "brand": "Brand TBD \u00b7 color TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Flooring",
+     "name": "Sample tile flooring",
+     "brand": "Brand TBD \u00b7 color TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Fixtures",
+     "name": "Sample shower & tub fixtures",
+     "brand": "Brand TBD \u00b7 finish TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Lighting",
+     "name": "Sample vanity lighting",
+     "brand": "Brand TBD \u00b7 finish TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Appliances",
+     "name": "Sample bath appliances (e.g. fan/heated floor)",
+     "brand": "Brand TBD \u00b7 TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Paint",
+     "name": "Sample wall paint",
+     "brand": "Brand TBD \u00b7 color TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    },
+    {
+     "category": "Hardware",
+     "name": "Sample towel bars & pulls",
+     "brand": "Brand TBD \u00b7 finish TBD",
+     "note": "SAMPLE - placeholder",
+     "photo": null,
+     "sample": true
+    }
+   ]
+  }
+ ]
+};
