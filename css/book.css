@@ -101,3 +101,5 @@ h1,h2,h3{font-family:"Playfair Display",serif;font-weight:400;line-height:1.12;l
 @media(min-width:760px){.edge{width:60px;top:10px;bottom:10px;height:auto}.edge.next{right:0}.edge.prev{left:0}}
 
 .notrans .leaf{transition:none!important}
+.flat .leaf.turned{visibility:hidden}.flat .backside{display:none}.flat .leaf.fadein{animation:fade2d .45s ease-out}@keyframes fade2d{from{opacity:.001}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.flat .leaf.fadein{animation-duration:.01s}}

@@ -43,7 +43,10 @@ const leaves=[...book.children];
 $("index").innerHTML=pages.map((p,i)=>`<button data-i="${i}">${esc(p.label)}</button>`).join("");
 $("dots").innerHTML=pages.map((p,i)=>`<button data-i="${i}" aria-label="${esc(p.label)}"></button>`).join("");
 let cur=0,turned=false;
+const FLAT=/AppleWebKit/.test(navigator.userAgent)&&!/Chrome|Chromium|Edg|CriOS|FxiOS|Android/.test(navigator.userAgent)||/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1)||matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(FLAT)book.classList.add("flat");
 let ft;function set(n,anim=true){n=Math.max(0,Math.min(N-1,n));const fwd=n>cur;
+ if(FLAT&&anim){const nl=leaves[n];if(nl&&n!==cur){nl.classList.remove("fadein");void nl.offsetWidth;nl.classList.add("fadein")}anim=false;if(fwd&&!turned){turned=true;setTimeout(()=>{if(!leadShownOnce())openLead("first-turn")},1400)}}
  if(anim){if(!book.classList.contains("flipping")){book.classList.add("flipping","notrans");void book.offsetWidth;book.classList.remove("notrans");void book.offsetWidth}clearTimeout(ft);ft=setTimeout(()=>book.classList.remove("flipping"),1050)}
  leaves.forEach((l,i)=>{const t=i<n;clearTimeout(l._g);
   if(!anim){l.classList.toggle("turned",t);l.classList.toggle("gone",t);l.style.zIndex=t?i+1:N-i;return}
